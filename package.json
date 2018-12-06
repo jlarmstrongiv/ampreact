@@ -1,9 +1,7 @@
 {
+  "name": "ampreact-starter",
+  "version": "0.0.0",
   "private": true,
-  "name": "ampreact",
-  "version": "2.1.0",
-  "description": "⚡⚛ AMP HTML + React — The most trendy website boilerplate possible.",
-  "main": "",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -12,21 +10,6 @@
     "validate": "find ./out -name \"*.html\" -exec ./node_modules/amphtml-validator/index.js {} +",
     "surge": "yarpm-yarn export && ./node_modules/surge/lib/cli.js --domain $(node -p \"require('./package.json').name\").surge.sh --project ./build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dfrankland/ampreact.git"
-  },
-  "keywords": [
-    "amp",
-    "react",
-    "trendy"
-  ],
-  "author": "Dylan Frankland <dylan@frankland.io> (http://dylan.frankland.io/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/dfrankland/ampreact/issues"
-  },
-  "homepage": "https://github.com/dfrankland/ampreact#readme",
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
@@ -45,6 +28,7 @@
     "@babel/plugin-proposal-throw-expressions": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "amphtml-validator": "^1.0.23",
     "babel-eslint": "^10.0.1",
     "babel-plugin-styled-components": "^1.5.1",
     "eslint": "^5.9.0",
@@ -57,7 +41,6 @@
     "yarpm": "^0.2.1"
   },
   "dependencies": {
-    "amphtml-validator": "^1.0.23",
     "next": "^7.0.2",
     "react": "^16.3.1",
     "react-amphtml": "^3.0.0",
