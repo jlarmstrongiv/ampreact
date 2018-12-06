@@ -8,7 +8,7 @@
     "start": "next start",
     "export": "next build && next export",
     "validate": "find ./out -name \"*.html\" -exec ./node_modules/amphtml-validator/index.js {} +",
-    "surge": "yarpm-yarn export && ./node_modules/surge/lib/cli.js --domain $(node -p \"require('./package.json').name\").surge.sh --project ./build"
+    "surge": "yarpm-yarn export && ./node_modules/surge/lib/cli.js --domain $(node -p \"require('./package.json').name\").surge.sh --project ./out"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -38,6 +38,7 @@
     "eslint-plugin-jest": "^22.1.2",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.11.1",
+    "surge": "^0.20.1",
     "yarpm": "^0.2.1"
   },
   "dependencies": {
