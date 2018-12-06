@@ -8,7 +8,9 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint -c ./package.json ./pages"
+    "export": "next build && next export",
+    "validate": "find ./out -name \"*.html\" -exec ./node_modules/amphtml-validator/index.js {} +",
+    "surge": "yarpm-yarn export && ./node_modules/surge/lib/cli.js --domain $(node -p \"require('./package.json').name\").surge.sh --project ./build"
   },
   "repository": {
     "type": "git",
@@ -26,30 +28,40 @@
   },
   "homepage": "https://github.com/dfrankland/ampreact#readme",
   "devDependencies": {
-    "babel-eslint": "^8.2.2",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-proposal-do-expressions": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-function-bind": "^7.0.0",
+    "@babel/plugin-proposal-function-sent": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "babel-eslint": "^10.0.1",
     "babel-plugin-styled-components": "^1.5.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^16.1.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-jlarmst": "^0.0.7",
     "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jest": "^22.1.2",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.7.0"
+    "eslint-plugin-react": "^7.11.1",
+    "yarpm": "^0.2.1"
   },
   "dependencies": {
-    "next": "^5.1.0",
+    "amphtml-validator": "^1.0.23",
+    "next": "^7.0.2",
     "react": "^16.3.1",
     "react-amphtml": "^3.0.0",
     "react-dom": "^16.3.1",
-    "styled-components": "^3.2.5"
-  },
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "extends": "airbnb",
-    "env": {
-      "browser": true
-    },
-    "rules": {
-      "react/jsx-filename-extension": "off"
-    }
+    "styled-components": "^4.1.2"
   }
 }
